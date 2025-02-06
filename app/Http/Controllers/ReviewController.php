@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Review;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ReviewController extends Controller
 {
@@ -26,9 +27,22 @@ class ReviewController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(Request $request, $id_film)
     {
-        //
+        $request->validate([
+            'content' => 'required|string|max:255|min:50',
+            'rating' => 'required|integer|min:1|max:5',
+            'film_id' => 'required|integer'
+        ]);
+
+        Review::create([
+            'content' => $request->content,
+            'rating' => $request->rating,
+            'film_id' => $id_film,
+            'user_id' => Auth::id()
+        ]);
+
+        return redirect()->route('films.show', $id_film);
     }
 
     /**
