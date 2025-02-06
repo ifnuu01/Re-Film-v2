@@ -9,6 +9,7 @@ class Actor extends Model
     protected $fillable = [
         'name',
         'photo',
+        'biography',
         'cast_id',
         'film_id',
     ];
