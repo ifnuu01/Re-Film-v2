@@ -25,11 +25,11 @@
         </ul>
         <ul class="lg:flex lg:items-center lg:gap-x-2 z-20 lg:relative absolute top-60 right-0 left-0 lg:top-0" id="menuAuth">
             <li>
-                <a href="" class="text-base text-white bg-[#161A20] px-6 py-2 rounded-full text-center block w-40 mx-auto
+                <a href="{{ route('login') }}" class="text-base text-white bg-[#161A20] px-6 py-2 rounded-full text-center block w-40 mx-auto
                 lg:mt-0 lg:w-auto">Login</a>
             </li>
             <li>
-                <a href="" class="text-base text-white bg-[#161A20] px-6 py-2 rounded-full text-center block w-40 mx-auto mt-2 lg:mt-0
+                <a href="{{ route('register') }}" class="text-base text-white bg-[#161A20] px-6 py-2 rounded-full text-center block w-40 mx-auto mt-2 lg:mt-0
                 lg:w-auto">Register</a>
             </li>
         </ul>
