@@ -34,7 +34,7 @@ class FilmController extends Controller
     {
         $request->validate([
             'title' => 'required|string|max:100|min:3',
-            'description' => 'required|string|max:255|min:50',
+            'description' => 'required|string|max:50000|min:50',
             'release_year' => 'required|integer',
             'genre_id' => 'required|integer',
             'photo' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
@@ -93,7 +93,7 @@ class FilmController extends Controller
     {
         $request->validate([
             'title' => 'required|string|max:100|min:3',
-            'description' => 'required|string|max:255|min:50',
+            'description' => 'required|string|max:50000|min:50',
             'release_year' => 'required|integer',
             'genre_id' => 'required|integer',
             'photo' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
