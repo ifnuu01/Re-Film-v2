@@ -31,7 +31,7 @@ class CastController extends Controller
     {
         $request->validate([
             'name' => 'required|string|max:100|min:3',
-            'biography' => 'required|string|max:255|min:50',
+            'biography' => 'required|string|max:50000|min:10',
             'birth_date' => 'required|date',
             'photo' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
@@ -86,7 +86,7 @@ class CastController extends Controller
     {
         $request->validate([
             'name' => 'required|string|max:100|min:3',
-            'biography' => 'required|string|max:255|min:50',
+            'biography' => 'required|string|max:50000|min:10',
             'birth_date' => 'required|date',
             'photo' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);

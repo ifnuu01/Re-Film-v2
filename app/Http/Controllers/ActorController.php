@@ -36,7 +36,7 @@ class ActorController extends Controller
         $request->validate([
             'name' => 'required|string|max:100|min:3',
             'photo' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-            'biography' => 'required|string|max:255|min:50',
+            'biography' => 'required|string|max:50000|min:10',
             'cast_id' => 'required|integer',
             'film_id' => 'required|integer',
         ]);
@@ -94,8 +94,8 @@ class ActorController extends Controller
     {
         $request->validate([
             'name' => 'required|string|max:100|min:3',
-            'photo' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-            'biography' => 'required|string|max:255|min:50',
+            'photo' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'biography' => 'required|string|max:50000|min:10',
             'cast_id' => 'required|integer',
             'film_id' => 'required|integer',
         ]);
