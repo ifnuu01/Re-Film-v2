@@ -23,7 +23,7 @@
             <thead class="">
                 <tr class="text-left bg-[#161A20] border-b-2 border-solid border-white">
                     <th class="py-2 px-2">No</th>
-                    <th class="py-2 px-2">Title</th>
+                    <th class="py-2 px-2">Film Title</th>
                     <th class="py-2 px-2">Poster</th>
                     <th class="py-2 px-2">Action</th>
                 </tr>
@@ -33,7 +33,7 @@
                 <tr class="hover:bg-[#161A20]">
                     <td class="py-2 px-2">{{ $key + 1 }}</td>
                     <td class="py-2 px-2">{{$film->title}}</td>
-                    <td class="py-2 px-2"><img class="rounded" src="{{asset('storage/'.$film->photo)}}" width="60px" alt="{{$film->title}}"></td>
+                    <td class="py-2 px-2"><img class="rounded w-20 h-20 object-cover" src="{{asset('storage/'.$film->photo)}}" alt="{{$film->title}}"></td>
                     <td class="py-2 px-2">
                         <form action="{{route('films.destroy', $film->id)}}" method="POST" class="flex gap-x-2">
                             @method('DELETE')

@@ -1,17 +1,27 @@
 <?php
 
+use App\Http\Controllers\ActorController;
+use App\Http\Controllers\CastController;
+use App\Http\Controllers\FilmController;
+use App\Http\Controllers\GenreController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Middleware\RoleMiddleware;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    return view('genre.index');
+    return view('welcome');
 });
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified', RoleMiddleware::class . ':admin'])->name('dashboard');
 
+Route::middleware(['auth', 'verified', RoleMiddleware::class . ':admin'])->group(function () {
+    Route::resource('genres', GenreController::class);
+    Route::resource('films', FilmController::class);
+    Route::resource('casts', CastController::class);
+    Route::resource('actors', ActorController::class);
+    Route::get('/dashboard', function () {
+        return view('dashboard');
+    })->name('dashboard');
+});
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
