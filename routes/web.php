@@ -12,15 +12,23 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('dashboard', function () {
+    return view('dashboard');
+})->name('dashboard');
 
-Route::middleware(['auth', 'verified', RoleMiddleware::class . ':admin'])->group(function () {
+Route::get('admin/profile', function () {
+    return view('profile.profile');
+})->name('admin.profile');
+
+
+Route::prefix('admin')->middleware(['auth', 'verified', RoleMiddleware::class . ':admin'])->group(function () {
+    Route::get('/', function () {
+        return view('dashboard');
+    })->name('dashboard');
     Route::resource('genres', GenreController::class);
     Route::resource('films', FilmController::class);
     Route::resource('casts', CastController::class);
     Route::resource('actors', ActorController::class);
-    Route::get('/dashboard', function () {
-        return view('dashboard');
-    })->name('dashboard');
 });
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
