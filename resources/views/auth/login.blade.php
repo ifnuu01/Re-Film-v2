@@ -8,9 +8,9 @@
     <title>Login</title>
 </head>
 <body class="bg-[#22252F]">
-    <div class="flex justify-content items-center h-screen">
-        <form class="bg-[#161A20] shadow-lg w-full lg:w-2/6 mx-auto py-8 px-4 lg:rounded-lg shadow-lg h-fit flex flex-col items-center" action="{{route('login')}}" method="post">
-            <h2 class="text-center animate-pulse font-bold text-3xl py-2 text-transparent bg-clip-text bg-gradient-to-r from-[#FC882F] to-[#2EBCF9]">Login Into Re Film</h2>
+    <div class="items-center h-screen flex flex-col justify-center">
+        <h2 class="text-center animate-pulse font-bold text-3xl py-2 text-transparent bg-clip-text bg-gradient-to-r from-[#FC882F] to-[#2EBCF9]">Login Into Re Film</h2>
+        <form class="bg-[#22252F] shadow-2xl w-full lg:w-2/6 mx-auto py-8 px-4 lg:rounded-lg shadow-lg h-fit flex flex-col items-center" action="{{route('login')}}" method="post">
             @csrf
             <div class="w-80 py-2">
                 <label for="email" class="text-white font-bold">Email</label>
