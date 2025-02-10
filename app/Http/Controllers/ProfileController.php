@@ -7,6 +7,7 @@ use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\View\View;
 
 class ProfileController extends Controller
@@ -16,9 +17,44 @@ class ProfileController extends Controller
      */
     public function edit(Request $request): View
     {
+        if ($request->user()->isAdmin()) {
+            return view('profile.edit-admin', [
+                'user' => $request->user(),
+            ]);
+        }
+
         return view('profile.edit', [
             'user' => $request->user(),
         ]);
+    }
+
+    public function profileUpdate(Request $request): RedirectResponse
+    {
+        $request->validate([
+            'photo' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+        ]);
+
+        $user = $request->user();
+        $profile = $user->profile;
+
+        if (!$profile) {
+            $profile = $user->profile()->create([
+                'photo' => null, // Awalnya kosong
+            ]);
+        }
+
+        if ($request->hasFile('photo')) {
+
+            if ($profile->photo) {
+                Storage::disk('public')->delete($profile->photo);
+            }
+
+            $path = $request->file('photo')->store('images', 'public');
+
+            $profile->update(['photo' => $path]);
+        }
+
+        return Redirect::route('profile.edit')->with('status', 'profile-updated');
     }
 
     /**
