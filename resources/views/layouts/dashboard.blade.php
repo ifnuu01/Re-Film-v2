@@ -11,7 +11,7 @@
 <body class="bg-[#161A20]">
     {{-- Navbar --}}
     <nav class="flex justify-between bg-[#22252F] p-4 items-center fixed w-full z-10 h-20">
-        <div class="pl-64" id="logo">
+        <div class="lg:pl-64" id="logo">
             <svg id="menu-btn" class="w-[24px] fill-[url(#grad1)] inline cursor-pointer animate-bounce mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M0 96C0 78.3 14.3 64 32 64l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 128C14.3 128 0 113.7 0 96zM64 256c0-17.7 14.3-32 32-32l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L96 288c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32L32 448c-17.7 0-32-14.3-32-32s14.3-32 32-32l384 0c17.7 0 32 14.3 32 32z"/><defs>
                 <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="0%">
                   <stop offset="0%" style="stop-color:#FC882F;stop-opacity:1" />
@@ -36,8 +36,7 @@
                 class="absolute right-0 mt-2 w-48 bg-[#2EBCF9] text-black shadow-lg rounded-lg py-2 text-white">
                 <form action="{{route('logout')}}" method="post">
                     @csrf
-                    <a href="#" class="block px-4 py-2 hover:bg-white hover:text-[#2EBCF9]">Profile</a>
-                    <a href="#" class="block px-4 py-2 hover:bg-white hover:text-[#2EBCF9]">Settings</a>
+                    <a href="{{route('profile.edit')}}" class="block px-4 py-2 hover:bg-white hover:text-[#2EBCF9]">Settings</a>
                     <button type="submit" class="w-full text-left px-4 py-2 hover:bg-white hover:text-[#2EBCF9]">Logout</button>
                 </form>
             </div>
@@ -45,9 +44,9 @@
     </nav>
 
     {{-- sidebar --}}
-    <div id="sidebar" class="bg-[#22252F] h-full fixed w-64 top-0 left-0 z-10">
+    <div id="sidebar" class="bg-[#22252F] h-full fixed w-60 lg:w-64 top-0 left-0 z-10 hidden lg:block">
         <div class="p-4 border-b border-[#161A20]">
-            <a href="#" class="block py-2 font-bold text-2xl text-transparent bg-clip-text bg-gradient-to-r from-[#FC882F] to-[#2EBCF9]">Dashboard</a>
+            <a href="{{route('dashboard')}}" class="block py-2 font-bold text-2xl text-transparent bg-clip-text bg-gradient-to-r from-[#FC882F] to-[#2EBCF9]">Dashboard</a>
         </div>
         <div class="flex flex-col p-4 gap-y-2">
             <h2 class="text-lg text-white font-bold mb-2">Main Features</h2>
@@ -75,7 +74,11 @@
 
         menuBtn.addEventListener('click', () => {
             sidebar.classList.toggle('hidden');
-            containerLogo.classList.toggle('pl-64');
+            containerLogo.classList.toggle('pl-56');
+            containerLogo.classList.toggle('lg:pl-64');
+            containerLogo.classList.toggle('lg:pl-0');
+            sidebar.classList.toggle('lg:block');
+            sidebar.classList.toggle('lg:hidden');
             content.classList.toggle('lg:pl-64');
         });
     </script>
