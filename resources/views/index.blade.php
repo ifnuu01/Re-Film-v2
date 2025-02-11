@@ -7,103 +7,83 @@
     <title>Document</title>
 </head>
 <body class="bg-[#161A20]">
-    <nav class="flex justify-between items-center py-7 bg-[#22252F] px-10 drop-shadow-lg fixed w-full z-10 top-0">
-        <div class="text-[#2EBCF9] font-bold text-4xl animate-bounce cursor-pointer">RE <span class="text-[#FC882F]">FILM</span></div>
-        <button id="menu-btn" class="lg:hidden text-white text-3xl z-30 animate-bounce">
-            &#9776;
-        </button>
-        <ul class="lg:flex lg:items-center lg:gap-x-2 bg-[#22252F] lg:bg-transparent lg:relative absolute top-0 right-0 left-0 h-screen lg:h-auto z-10" id="menuUtama">
-            <li>
-                <a href="index.php" class="transition duration-150 ease-in-out block text-base text-[#161A20] bg-[#F9E52E] px-6 py-2 rounded-full font-bold cursor-pointer mt-20 w-40 text-center mx-auto lg:mt-0 lg:w-auto">List <span>Cast</span></a>
-            </li>
-            <li>
-                <a href="index.php" class="transition duration-150 ease-in-out block text-base text-[#161A20] bg-[#FC882F] px-6 py-2 rounded-full font-bold cursor-pointer mt-2 w-40 text-center mx-auto lg:mt-0 lg:w-auto">List <span>Film</span></a>
-            </li>
-            <li>
-                <a href="index.php"class="transition duration-150 ease-in-out block text-base text-[#161A20] bg-[#2EBCF9] px-6 py-2 rounded-full font-bold cursor-pointer mt-2 w-40 text-center mx-auto lg:mt-0 lg:w-auto">List <span>Genre</span></a>
-            </li>
-        </ul>
-        <ul class="lg:flex lg:items-center lg:gap-x-2 z-20 lg:relative absolute top-60 right-0 left-0 lg:top-0" id="menuAuth">
-            <li>
-                <a href="{{ route('login') }}" class="text-base text-white bg-[#161A20] px-6 py-2 rounded-full text-center block w-40 mx-auto
-                lg:mt-0 lg:w-auto">Login</a>
-            </li>
-            <li>
-                <a href="{{ route('register') }}" class="text-base text-white bg-[#161A20] px-6 py-2 rounded-full text-center block w-40 mx-auto mt-2 lg:mt-0
-                lg:w-auto">Register</a>
-            </li>
+    <nav class="flex justify-between items-center py-7 bg-[#22252F] px-4 lg:px-10 drop-shadow-lg fixed w-full z-10 top-0">
+        <div class="text-transparent bg-clip-text bg-gradient-to-r from-[#FC882F] to-[#2EBCF9] text-4xl font-bold">RE FILM</div>
+        <ul class="flex gap-x-4 justify-center items-center">
+            <svg id="logo-search" class="w-[24px] fill-[url(#grad1)] inline cursor-pointer animate-bounce mr-2"  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z"/><defs>
+                <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="0%">
+                  <stop offset="0%" style="stop-color:#FC882F;stop-opacity:1" />
+                  <stop offset="100%" style="stop-color:#2EBCF9;stop-opacity:1" />
+                </linearGradient>
+              </defs></svg>
+            <form action="" id="search" class="absolute hidden flex mx-auto right-0 left-0 items-center justify-center top-28 w-96 lg:w-1/2">
+                <input type="text" class="bg-[#22252F] text-white px-4 py-2 rounded-l w-full border-none outline-none" placeholder="Search">
+                <button type="submit" class="bg-gradient-to-r from-[#FC882F] to-[#2EBCF9] px-4 py-2 rounded-r text-white font-semibold">Search</button>
+            </form>
+            <div class="lg:hidden" id="logo">
+                <svg id="menu-btn" class="w-[24px] fill-[url(#grad1)] inline cursor-pointer animate-bounce mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M0 96C0 78.3 14.3 64 32 64l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 128C14.3 128 0 113.7 0 96zM64 256c0-17.7 14.3-32 32-32l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L96 288c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32L32 448c-17.7 0-32-14.3-32-32s14.3-32 32-32l384 0c17.7 0 32 14.3 32 32z"/><defs>
+                    <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="0%">
+                        <stop offset="0%" style="stop-color:#FC882F;stop-opacity:1" />
+                      <stop offset="100%" style="stop-color:#2EBCF9;stop-opacity:1" />
+                    </linearGradient>
+                  </defs>
+                </svg>
+            </div>
+            <div id="menu-auth" class="absolute right-4 rounded top-28 flex-col lg:flex-row gap-y-8 bg-[#22252F] lg:bg-transparent lg:relative lg:top-0 lg:right-0 lg:px-0 lg:py-0 px-4 py-4 flex items-center justify-center gap-x-4 hidden lg:flex" id="menuAuth">
+                @auth
+                @if(auth()->user()->isAdmin())
+                    <li>
+                        <a href="{{ route('dashboard') }}" class="bg-gradient-to-r from-[#FC882F] to-[#2EBCF9] px-4 py-2 text-white font-semibold rounded">Dashboard</a>
+                    </li>
+                @endif
+                    <li>
+                        <a href="{{ route('logout') }}" class="bg-gradient-to-r from-[#FC882F] to-[#2EBCF9] px-4 py-2 text-white font-semibold rounded"
+                           onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="hidden">
+                            @csrf
+                        </form>
+                    </li>
+                @else
+                    <li>
+                        <a href="{{ route('register') }}" class="bg-gradient-to-r from-[#FC882F] to-[#2EBCF9] px-4 py-2 text-white font-semibold rounded">Register</a>
+                    </li>
+                    <li>
+                        <a href="{{ route('login') }}" class="bg-gradient-to-r from-[#FC882F] to-[#2EBCF9] px-4 py-2 text-white font-semibold rounded">Login</a>
+                    </li>
+                @endauth
+            </div>
         </ul>
     </nav>
 
-
-    <section class="flex justify-center items-center px-10 pt-33">
-        <img src="Walpaper Laptop.png" alt="" class="w-full h-[350px] lg:h-[500px] object-cover rounded-lg">
-    </section>
-
-    <section class="flex flex-col px-10 mt-8">
-        <h1 class="text-[#2EBCF9] font-bold text-xl">Review <span class="text-[#FC882F]">Film</span></h1>
-        <p class="text-base text-white mt-4">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem earum harum impedit nam nihil voluptas. Veritatis ratione sapiente expedita qui doloribus dolores, est debitis. Tempora ab voluptatum praesentium deleniti ipsam! Lorem ipsum dolor sit amet consectetur, adipisicing elit. Reiciendis reprehenderit magnam ducimus ullam eveniet cum dolorem labore accusamus cupiditate fuga enim similique ea quasi odit sint, quidem consequuntur neque repellat?
-        </p>
-    </section>
-    <section class="flex flex-col px-10 mt-8">
-        <h1 class="text-[#2EBCF9] font-bold text-xl">List <span class="text-[#FC882F]">Film</span></h1>
-        <div class="mt-8 grid grid-cols-2 lg:grid-cols-6 md:grid-cols-4 gap-x-4 gap-y-2">
-            <a class="flex flex-col animate-pulse cursor-pointer">
-                <img src="download.jpeg" alt="" class="w-[200px] h-[200px] lg:h-[250px] object-cover rounded-lg">
-                <p class="text-base font-bold text-white">Saitama</p>
-                <p class="text-base font-semibold text-[#5C636F]">Action</p>
-            </a>
-            <a class="flex flex-col animate-pulse cursor-pointer">
-                <img src="download.jpeg" alt="" class="w-[200px] h-[200px] lg:h-[250px] object-cover rounded-lg">
-                <p class="text-base font-bold text-white">Saitama</p>
-                <p class="text-base font-semibold text-[#5C636F]">Action</p>
-            </a>
-            <a class="flex flex-col animate-pulse cursor-pointer">
-                <img src="download.jpeg" alt="" class="w-[200px] h-[200px] lg:h-[250px] object-cover rounded-lg">
-                <p class="text-base font-bold text-white">Saitama</p>
-                <p class="text-base font-semibold text-[#5C636F]">Action</p>
-            </a>
-            <a class="flex flex-col animate-pulse cursor-pointer">
-                <img src="download.jpeg" alt="" class="w-[200px] h-[200px] lg:h-[250px] object-cover rounded-lg">
-                <p class="text-base font-bold text-white">Saitama</p>
-                <p class="text-base font-semibold text-[#5C636F]">Action</p>
-            </a>
-            <a class="flex flex-col animate-pulse cursor-pointer">
-                <img src="download.jpeg" alt="" class="w-[200px] h-[200px] lg:h-[250px] object-cover rounded-lg">
-                <p class="text-base font-bold text-white">Saitama</p>
-                <p class="text-base font-semibold text-[#5C636F]">Action</p>
-            </a>
-            <a class="flex flex-col animate-pulse cursor-pointer">
-                <img src="download.jpeg" alt="" class="w-[200px] h-[200px] lg:h-[250px] object-cover rounded-lg">
-                <p class="text-base font-bold text-white">Saitama</p>
-                <p class="text-base font-semibold text-[#5C636F]">Action</p>
-            </a>
+    <main class="px-4 lg:px-10 grid grid-cols-1 lg:grid-cols-4 gap-4 mt-[167px] bg-blue-200">
+        <div class="lg:col-span-3 flex flex-col gap-4">
+            <div class="bg-red-200">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam aliquam, debitis laboriosam est architecto totam natus hic, ipsam eaque et vitae recusandae. Consequatur optio expedita ea vero repellendus debitis quis.</p>
+            </div>
+            <div class="bg-red-200">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam aliquam, debitis laboriosam est architecto totam natus hic, ipsam eaque et vitae recusandae. Consequatur optio expedita ea vero repellendus debitis quis.</p>
+            </div>
         </div>
-    </section>
 
-    <section class="flex flex-col px-10 mt-8">
-        <h1 class="text-[#2EBCF9] font-bold text-xl">List <span class="text-[#FC882F]">Genre</span></h1>
-        <div class="flex mt-8 grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-x-4 gap-y-2">
-            <a href="" class="bg-[#22252F] font-bold text-white text-center rounded-full py-2 px-4">Action</a>
-            <a href="" class="bg-[#22252F] font-bold text-white text-center rounded-full py-2 px-4">Action</a>
-            <a href="" class="bg-[#22252F] font-bold text-white text-center rounded-full py-2 px-4">Action</a>
-            <a href="" class="bg-[#22252F] font-bold text-white text-center rounded-full py-2 px-4">Action</a>
+        <div class="bg-red-200">
+            <div>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum repellat, voluptate aut architecto eveniet corrupti voluptatibus aspernatur atque quisquam vitae voluptas at tempora repellendus! Laudantium cum ducimus est ullam obcaecati.Inventore aperiam voluptates maxime! Vero debitis fuga fugiat esse excepturi soluta inventore neque laboriosam nisi harum officia non error, iure a quia voluptas sit consequatur ipsa! Quidem sint voluptatum ipsa!</p>
+            </div>
         </div>
-    </section>
-
-    <footer class="text-center mt-8 mb-8">
-        <p class="text-white text-base">© 2024 Ifnu Umar. All rights reserved.</p>
-    </footer>
-
+    </main>
 
     <script>
-        const hamburger = document.getElementById('menu-btn');
-        const menuUtama = document.getElementById('menuUtama');
-        const menuAuth = document.getElementById('menuAuth');
+        const search = document.getElementById('search');
+        const logoSearch = document.getElementById('logo-search');
 
-        hamburger.addEventListener('click', () => {
-            menuUtama.classList.toggle('hidden');
+        logoSearch.addEventListener('click', () => {
+            search.classList.toggle('hidden');
+        });
+
+        const menuBtn = document.getElementById('menu-btn');
+        const menuAuth = document.getElementById('menu-auth');
+
+        menuBtn.addEventListener('click', () => {
             menuAuth.classList.toggle('hidden');
         });
     </script>
