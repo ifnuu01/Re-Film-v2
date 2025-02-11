@@ -24,7 +24,7 @@
                 @csrf
                 @method('PATCH')
                 <input type="file" name="photo" id="photo" class="hidden">
-                <label for="photo" class="bg-[#2EBCF9] text-white px-4 py-2 rounded-lg cursor-pointer">Upload Picture</label>
+                <label for="photo" class="bg-[#2EBCF9] text-white px-4 py-2 rounded-lg cursor-pointer text-center">Upload Picture</label>
                 <button type="submit" class="bg-[#2EBCF9] text-white px-4 py-2 rounded-lg cursor-pointer">Save</button>
                 @error('photo')
                     <p class="text-red-500 text-sm">{{ $message }}</p>
