@@ -205,7 +205,7 @@
                     </a>
                 </div>
                 <div class="w-full flex justify-center">
-                    <button class="bg-gradient-to-r mt-4 mb-4 from-[#FC882F] to-[#2EBCF9] px-8 py-2 rounded-lg text-white font-semibold">Next</button>
+                    <button class="bg-gradient-to-r mt-4 from-[#FC882F] to-[#2EBCF9] px-8 py-2 rounded-lg text-white font-semibold">Next</button>
                 </div>
             </div>
             <div class="bg-[#22252F] p-4 rounded-lg mt-4 h-fit">
@@ -249,7 +249,7 @@
                     </a>
                 </div>
                 <div class="w-full flex justify-center">
-                    <button class="bg-gradient-to-r mt-4 mb-4 from-[#FC882F] to-[#2EBCF9] px-8 py-2 rounded-lg text-white font-semibold">Next</button>
+                    <button class="bg-gradient-to-r mt-4 from-[#FC882F] to-[#2EBCF9] px-8 py-2 rounded-lg text-white font-semibold">Next</button>
                 </div>
             </div>
         </div>
