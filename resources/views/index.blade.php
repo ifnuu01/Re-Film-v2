@@ -203,6 +203,38 @@
                         <img src="{{asset('assets/images/image-1.jpg')}}" alt="" class="w-full h-[100px] lg:h-[110px] object-cover rounded-lg">
                         <h3 class="text-sm text-white mt-2">Name</h3>
                     </a>
+                </div>
+                <div class="w-full flex justify-center">
+                    <button class="bg-gradient-to-r mt-4 mb-4 from-[#FC882F] to-[#2EBCF9] px-8 py-2 rounded-lg text-white font-semibold">Next</button>
+                </div>
+            </div>
+            <div class="bg-[#22252F] p-4 rounded-lg mt-4 h-fit">
+                <h2 class="text-lg text-white font-semibold">List Actor</h2>
+                <div class="grid grid-cols-3 lg:grid-cols-3 gap-4 mt-4">
+                    <a href="">
+                        <img src="{{asset('assets/images/image-1.jpg')}}" alt="" class="w-full h-[100px] lg:h-[110px] object-cover rounded-lg">
+                        <h3 class="text-sm text-white mt-2">Name</h3>
+                    </a>
+                    <a href="">
+                        <img src="{{asset('assets/images/image-1.jpg')}}" alt="" class="w-full h-[100px] lg:h-[110px] object-cover rounded-lg">
+                        <h3 class="text-sm text-white mt-2">Name</h3>
+                    </a>
+                    <a href="">
+                        <img src="{{asset('assets/images/image-1.jpg')}}" alt="" class="w-full h-[100px] lg:h-[110px] object-cover rounded-lg">
+                        <h3 class="text-sm text-white mt-2">Name</h3>
+                    </a>
+                    <a href="">
+                        <img src="{{asset('assets/images/image-1.jpg')}}" alt="" class="w-full h-[100px] lg:h-[110px] object-cover rounded-lg">
+                        <h3 class="text-sm text-white mt-2">Name</h3>
+                    </a>
+                    <a href="">
+                        <img src="{{asset('assets/images/image-1.jpg')}}" alt="" class="w-full h-[100px] lg:h-[110px] object-cover rounded-lg">
+                        <h3 class="text-sm text-white mt-2">Name</h3>
+                    </a>
+                    <a href="">
+                        <img src="{{asset('assets/images/image-1.jpg')}}" alt="" class="w-full h-[100px] lg:h-[110px] object-cover rounded-lg">
+                        <h3 class="text-sm text-white mt-2">Name</h3>
+                    </a>
                     <a href="">
                         <img src="{{asset('assets/images/image-1.jpg')}}" alt="" class="w-full h-[100px] lg:h-[110px] object-cover rounded-lg">
                         <h3 class="text-sm text-white mt-2">Name</h3>
