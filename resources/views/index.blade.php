@@ -7,7 +7,7 @@
     <title>Document</title>
 </head>
 <body class="bg-[#161A20]">
-    <nav class="flex justify-between items-center py-7 bg-[#22252F] px-4 lg:px-10 drop-shadow-lg fixed w-full z-10 top-0">
+    <nav class="flex justify-between items-center py-7 bg-[#161A20] px-4 lg:px-10 drop-shadow-lg fixed w-full z-10 top-0">
         <div class="text-transparent bg-clip-text bg-gradient-to-r from-[#FC882F] to-[#2EBCF9] text-4xl font-bold">RE FILM</div>
         <ul class="flex gap-x-4 justify-center items-center">
             <svg id="logo-search" class="w-[24px] fill-[url(#grad1)] inline cursor-pointer animate-bounce mr-2"  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z"/><defs>
@@ -166,7 +166,7 @@
             </div>
             <div class="bg-[#22252F] p-4 rounded-lg mt-4 h-fit">
                 <h2 class="text-lg text-white font-semibold">List Cast</h2>
-                <div class="grid grid-cols-3 lg:grid-cols-3 gap-4 mt-4">
+                <div class="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-3 gap-4 mt-4">
                     <a href="">
                         <img src="{{asset('assets/images/image-1.jpg')}}" alt="" class="w-full h-[100px] lg:h-[110px] object-cover rounded-lg">
                         <h3 class="text-sm text-white mt-2">Name</h3>
@@ -210,7 +210,7 @@
             </div>
             <div class="bg-[#22252F] p-4 rounded-lg mt-4 h-fit">
                 <h2 class="text-lg text-white font-semibold">List Actor</h2>
-                <div class="grid grid-cols-3 lg:grid-cols-3 gap-4 mt-4">
+                <div class="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-3 gap-4 mt-4">
                     <a href="">
                         <img src="{{asset('assets/images/image-1.jpg')}}" alt="" class="w-full h-[100px] lg:h-[110px] object-cover rounded-lg">
                         <h3 class="text-sm text-white mt-2">Name</h3>
@@ -257,7 +257,7 @@
 
     <footer class="p-2 text-white text-center bottom-0 w-full mt-4">
         <div class="p-4 text-white text-center">
-            <p>&copy; 2021 RE FILM. All rights reserved.</p>
+            <p>&copy; 2025 RE FILM. All rights reserved.</p>
         </div>
     </footer>
 
