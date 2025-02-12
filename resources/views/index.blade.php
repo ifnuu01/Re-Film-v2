@@ -16,7 +16,7 @@
                   <stop offset="100%" style="stop-color:#2EBCF9;stop-opacity:1" />
                 </linearGradient>
               </defs></svg>
-            <form action="" id="search" class="absolute hidden flex mx-auto right-0 left-0 items-center justify-center top-28 w-96 lg:w-1/2">
+            <form action="" id="search" class="absolute hidden flex mx-auto right-0 left-0 items-center justify-center top-28 w-80 lg:w-1/2">
                 <input type="text" class="bg-[#22252F] text-white px-4 py-2 rounded-l w-full border-none outline-none" placeholder="Search">
                 <button type="submit" class="bg-gradient-to-r from-[#FC882F] to-[#2EBCF9] px-4 py-2 rounded-r text-white font-semibold">Search</button>
             </form>
@@ -55,22 +55,179 @@
         </ul>
     </nav>
 
-    <main class="px-4 lg:px-10 grid grid-cols-1 lg:grid-cols-4 gap-4 mt-[167px] bg-blue-200">
+    <main class="px-4 lg:px-10 grid grid-cols-1 lg:grid-cols-4 gap-4 mt-[167px]">
         <div class="lg:col-span-3 flex flex-col gap-4">
-            <div class="bg-red-200">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam aliquam, debitis laboriosam est architecto totam natus hic, ipsam eaque et vitae recusandae. Consequatur optio expedita ea vero repellendus debitis quis.</p>
+            <div class="rounded-lg">
+                <img src="{{asset('assets/images/image-2.jpg')}}" alt="" class="w-full h-[200px] lg:h-[250px] lg:h-[380px] object-cover rounded-lg">
             </div>
-            <div class="bg-red-200">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam aliquam, debitis laboriosam est architecto totam natus hic, ipsam eaque et vitae recusandae. Consequatur optio expedita ea vero repellendus debitis quis.</p>
+            <div>
+                <h2 class="text-white font-bold text-2xl">Populer</h2>
+                <div class="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-x-4 mt-4">
+                    <a href="#" class="rounded-lg cursor-pointer">
+                        <img src="{{asset('assets/images/image-1.jpg')}}" alt="" class="w-full h-[150px] md:h-[200px] lg:h-[250px] object-cover rounded-lg">
+                        <h3 class="text-white font-semibold text-base mt-2">Judul</h3>
+                        <p class="text-[#5C636F] text-sm font-semibold">Genre</p>
+                    </a>
+                    <a href="#" class="rounded-lg cursor-pointer">
+                        <img src="{{asset('assets/images/image-2.jpg')}}" alt="" class="w-full h-[150px] md:h-[200px] lg:h-[250px] object-cover rounded-lg">
+                        <h3 class="text-white font-semibold text-base mt-2">Judul</h3>
+                        <p class="text-[#5C636F] text-sm font-semibold">Genre</p>
+                    </a>
+                    <a href="#" class="rounded-lg cursor-pointer">
+                        <img src="{{asset('assets/images/image-2.jpg')}}" alt="" class="w-full h-[150px] md:h-[200px] lg:h-[250px] object-cover rounded-lg">
+                        <h3 class="text-white font-semibold text-base mt-2">Judul</h3>
+                        <p class="text-[#5C636F] text-sm font-semibold">Genre</p>
+                    </a>
+                    <a href="#" class="rounded-lg cursor-pointer">
+                        <img src="{{asset('assets/images/image-2.jpg')}}" alt="" class="w-full h-[150px] md:h-[200px] lg:h-[250px] object-cover rounded-lg">
+                        <h3 class="text-white font-semibold text-base mt-2">Judul</h3>
+                        <p class="text-[#5C636F] text-sm font-semibold">Genre</p>
+                    </a>
+                    <a href="#" class="rounded-lg cursor-pointer">
+                        <img src="{{asset('assets/images/image-2.jpg')}}" alt="" class="w-full h-[150px] md:h-[200px] lg:h-[250px] object-cover rounded-lg">
+                        <h3 class="text-white font-semibold text-base mt-2">Judul</h3>
+                        <p class="text-[#5C636F] text-sm font-semibold">Genre</p>
+                    </a>
+                </div>
+            </div>
+            <div>
+                <h2 class="text-white font-bold text-2xl">Latest Release</h2>
+                <div class="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-x-4 mt-4">
+                    <a href="#" class="rounded-lg cursor-pointer">
+                        <img src="{{asset('assets/images/image-1.jpg')}}" alt="" class="w-full h-[150px] md:h-[200px] lg:h-[250px] object-cover rounded-lg">
+                        <h3 class="text-white font-semibold text-base mt-2">Judul</h3>
+                        <p class="text-[#5C636F] text-sm font-semibold">Genre</p>
+                    </a>
+                    <a href="#" class="rounded-lg cursor-pointer">
+                        <img src="{{asset('assets/images/image-1.jpg')}}" alt="" class="w-full h-[150px] md:h-[200px] lg:h-[250px] object-cover rounded-lg">
+                        <h3 class="text-white font-semibold text-base mt-2">Judul</h3>
+                        <p class="text-[#5C636F] text-sm font-semibold">Genre</p>
+                    </a>
+                    <a href="#" class="rounded-lg cursor-pointer">
+                        <img src="{{asset('assets/images/image-1.jpg')}}" alt="" class="w-full h-[150px] md:h-[200px] lg:h-[250px] object-cover rounded-lg">
+                        <h3 class="text-white font-semibold text-base mt-2">Judul</h3>
+                        <p class="text-[#5C636F] text-sm font-semibold">Genre</p>
+                    </a>
+                    <a href="#" class="rounded-lg cursor-pointer">
+                        <img src="{{asset('assets/images/image-2.jpg')}}" alt="" class="w-full h-[150px] md:h-[200px] lg:h-[250px] object-cover rounded-lg">
+                        <h3 class="text-white font-semibold text-base mt-2">Judul</h3>
+                        <p class="text-[#5C636F] text-sm font-semibold">Genre</p>
+                    </a>
+                    <a href="#" class="rounded-lg cursor-pointer">
+                        <img src="{{asset('assets/images/image-2.jpg')}}" alt="" class="w-full h-[150px] md:h-[200px] lg:h-[250px] object-cover rounded-lg">
+                        <h3 class="text-white font-semibold text-base mt-2">Judul</h3>
+                        <p class="text-[#5C636F] text-sm font-semibold">Genre</p>
+                    </a>
+                    <a href="#" class="rounded-lg cursor-pointer">
+                        <img src="{{asset('assets/images/image-2.jpg')}}" alt="" class="w-full h-[150px] md:h-[200px] lg:h-[250px] object-cover rounded-lg">
+                        <h3 class="text-white font-semibold text-base mt-2">Judul</h3>
+                        <p class="text-[#5C636F] text-sm font-semibold">Genre</p>
+                    </a>
+                    <a href="#" class="rounded-lg cursor-pointer">
+                        <img src="{{asset('assets/images/image-2.jpg')}}" alt="" class="w-full h-[150px] md:h-[200px] lg:h-[250px] object-cover rounded-lg">
+                        <h3 class="text-white font-semibold text-base mt-2">Judul</h3>
+                        <p class="text-[#5C636F] text-sm font-semibold">Genre</p>
+                    </a>
+                    <a href="#" class="rounded-lg cursor-pointer">
+                        <img src="{{asset('assets/images/image-2.jpg')}}" alt="" class="w-full h-[150px] md:h-[200px] lg:h-[250px] object-cover rounded-lg">
+                        <h3 class="text-white font-semibold text-base mt-2">Judul</h3>
+                        <p class="text-[#5C636F] text-sm font-semibold">Genre</p>
+                    </a>
+                    <a href="#" class="rounded-lg cursor-pointer">
+                        <img src="{{asset('assets/images/image-2.jpg')}}" alt="" class="w-full h-[150px] md:h-[200px] lg:h-[250px] object-cover rounded-lg">
+                        <h3 class="text-white font-semibold text-base mt-2">Judul</h3>
+                        <p class="text-[#5C636F] text-sm font-semibold">Genre</p>
+                    </a>
+                    <a href="#" class="rounded-lg cursor-pointer">
+                        <img src="{{asset('assets/images/image-2.jpg')}}" alt="" class="w-full h-[150px] md:h-[200px] lg:h-[250px] object-cover rounded-lg">
+                        <h3 class="text-white font-semibold text-base mt-2">Judul</h3>
+                        <p class="text-[#5C636F] text-sm font-semibold">Genre</p>
+                    </a>
+                </div>
+                <div class="w-full flex justify-center">
+                    <button class="bg-gradient-to-r mt-4 mb-4 from-[#FC882F] to-[#2EBCF9] px-8 py-2 rounded-lg text-white font-semibold">Next</button>
+                </div>
             </div>
         </div>
 
-        <div class="bg-red-200">
-            <div>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum repellat, voluptate aut architecto eveniet corrupti voluptatibus aspernatur atque quisquam vitae voluptas at tempora repellendus! Laudantium cum ducimus est ullam obcaecati.Inventore aperiam voluptates maxime! Vero debitis fuga fugiat esse excepturi soluta inventore neque laboriosam nisi harum officia non error, iure a quia voluptas sit consequatur ipsa! Quidem sint voluptatum ipsa!</p>
+        <div>
+            <div class="bg-[#22252F] p-2 rounded-lg h-fit">
+                <form action="">
+                    <select name="genre" id="genre" class="text-white text-base font-semibold bg-[#161A20] cursor-pointer border-none outline-none w-full rounded-lg">
+                        <option class="text-sm" value="" disabled selected>Select Genre</option>
+                        <option class="text-sm" value="action">Action</option>
+                        <option class="text-sm" value="comedy">Comedy</option>
+                        <option class="text-sm" value="drama">Drama</option>
+                        <option class="text-sm" value="horror">Horror</option>
+                        <option class="text-sm" value="romance">Romance</option>
+                        <option class="text-sm" value="sci-fi">Sci-Fi</option>
+                    </select>
+                </form>
+            </div>
+            <div class="bg-[#22252F] p-4 rounded-lg mt-4 h-fit">
+                <h2 class="text-lg text-white font-semibold">List Cast</h2>
+                <div class="grid grid-cols-3 lg:grid-cols-3 gap-4 mt-4">
+                    <a href="">
+                        <img src="{{asset('assets/images/image-1.jpg')}}" alt="" class="w-full h-[100px] lg:h-[110px] object-cover rounded-lg">
+                        <h3 class="text-sm text-white mt-2">Name</h3>
+                    </a>
+                    <a href="">
+                        <img src="{{asset('assets/images/image-1.jpg')}}" alt="" class="w-full h-[100px] lg:h-[110px] object-cover rounded-lg">
+                        <h3 class="text-sm text-white mt-2">Name</h3>
+                    </a>
+                    <a href="">
+                        <img src="{{asset('assets/images/image-1.jpg')}}" alt="" class="w-full h-[100px] lg:h-[110px] object-cover rounded-lg">
+                        <h3 class="text-sm text-white mt-2">Name</h3>
+                    </a>
+                    <a href="">
+                        <img src="{{asset('assets/images/image-1.jpg')}}" alt="" class="w-full h-[100px] lg:h-[110px] object-cover rounded-lg">
+                        <h3 class="text-sm text-white mt-2">Name</h3>
+                    </a>
+                    <a href="">
+                        <img src="{{asset('assets/images/image-1.jpg')}}" alt="" class="w-full h-[100px] lg:h-[110px] object-cover rounded-lg">
+                        <h3 class="text-sm text-white mt-2">Name</h3>
+                    </a>
+                    <a href="">
+                        <img src="{{asset('assets/images/image-1.jpg')}}" alt="" class="w-full h-[100px] lg:h-[110px] object-cover rounded-lg">
+                        <h3 class="text-sm text-white mt-2">Name</h3>
+                    </a>
+                    <a href="">
+                        <img src="{{asset('assets/images/image-1.jpg')}}" alt="" class="w-full h-[100px] lg:h-[110px] object-cover rounded-lg">
+                        <h3 class="text-sm text-white mt-2">Name</h3>
+                    </a>
+                    <a href="">
+                        <img src="{{asset('assets/images/image-1.jpg')}}" alt="" class="w-full h-[100px] lg:h-[110px] object-cover rounded-lg">
+                        <h3 class="text-sm text-white mt-2">Name</h3>
+                    </a>
+                    <a href="">
+                        <img src="{{asset('assets/images/image-1.jpg')}}" alt="" class="w-full h-[100px] lg:h-[110px] object-cover rounded-lg">
+                        <h3 class="text-sm text-white mt-2">Name</h3>
+                    </a>
+                    <a href="">
+                        <img src="{{asset('assets/images/image-1.jpg')}}" alt="" class="w-full h-[100px] lg:h-[110px] object-cover rounded-lg">
+                        <h3 class="text-sm text-white mt-2">Name</h3>
+                    </a>
+                    <a href="">
+                        <img src="{{asset('assets/images/image-1.jpg')}}" alt="" class="w-full h-[100px] lg:h-[110px] object-cover rounded-lg">
+                        <h3 class="text-sm text-white mt-2">Name</h3>
+                    </a>
+                    <a href="">
+                        <img src="{{asset('assets/images/image-1.jpg')}}" alt="" class="w-full h-[100px] lg:h-[110px] object-cover rounded-lg">
+                        <h3 class="text-sm text-white mt-2">Name</h3>
+                    </a>
+                </div>
+                <div class="w-full flex justify-center">
+                    <button class="bg-gradient-to-r mt-4 mb-4 from-[#FC882F] to-[#2EBCF9] px-8 py-2 rounded-lg text-white font-semibold">Next</button>
+                </div>
             </div>
         </div>
     </main>
+
+    <footer class="p-2 text-white text-center bottom-0 w-full mt-4">
+        <div class="p-4 text-white text-center">
+            <p>&copy; 2021 RE FILM. All rights reserved.</p>
+        </div>
+    </footer>
 
     <script>
         const search = document.getElementById('search');
