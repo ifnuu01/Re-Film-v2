@@ -57,28 +57,6 @@
                         Quasi sed sint minus. Temporibus facilis sequi beatae, adipisci sint sunt, placeat cupiditate eius dolorum ratione tenetur veniam aut voluptate sapiente. Quisquam suscipit, qui iusto veritatis ipsam molestias necessitatibus facere!
                     </p>
                 </div>
-                <div class="bg-[#22252F] p-4 rounded-lg">
-                    <div class="flex items-center justify-between">
-                        <h2 class="text-white text-xl font-semibold"><img src="{{asset('assets/images/image-1.jpg')}}" class="inline mr-4 object-cover w-10 h-10 rounded-full" alt="">User</h2>
-                        <span class="text-sm text-[#5C636F]">2025-08-25 1:59 PM</span>
-                    </div>
-                    <p class="text-white text-base mt-4">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam, fuga voluptatem a reiciendis asperiores quia consequatur ab modi, autem hic porro non nemo esse saepe doloribus ratione minus! Perferendis, ullam?
-                        Officiis quas magnam, facere ducimus inventore quisquam sequi perferendis et, at placeat praesentium laboriosam molestias? Molestias error fugit eos expedita veniam accusantium! Veniam quis voluptas eaque minus officiis, hic ipsam.
-                        Quasi sed sint minus. Temporibus facilis sequi beatae, adipisci sint sunt, placeat cupiditate eius dolorum ratione tenetur veniam aut voluptate sapiente. Quisquam suscipit, qui iusto veritatis ipsam molestias necessitatibus facere!
-                    </p>
-                </div>
-                <div class="bg-[#22252F] p-4 rounded-lg">
-                    <div class="flex items-center justify-between">
-                        <h2 class="text-white text-xl font-semibold"><img src="{{asset('assets/images/image-1.jpg')}}" class="inline mr-4 object-cover w-10 h-10 rounded-full" alt="">User</h2>
-                        <span class="text-sm text-[#5C636F]">2025-08-25 1:59 PM</span>
-                    </div>
-                    <p class="text-white text-base mt-4">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam, fuga voluptatem a reiciendis asperiores quia consequatur ab modi, autem hic porro non nemo esse saepe doloribus ratione minus! Perferendis, ullam?
-                        Officiis quas magnam, facere ducimus inventore quisquam sequi perferendis et, at placeat praesentium laboriosam molestias? Molestias error fugit eos expedita veniam accusantium! Veniam quis voluptas eaque minus officiis, hic ipsam.
-                        Quasi sed sint minus. Temporibus facilis sequi beatae, adipisci sint sunt, placeat cupiditate eius dolorum ratione tenetur veniam aut voluptate sapiente. Quisquam suscipit, qui iusto veritatis ipsam molestias necessitatibus facere!
-                    </p>
-                </div>
             </div>
         </section>
         
