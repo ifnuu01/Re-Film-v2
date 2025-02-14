@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Actor;
+use App\Models\Cast;
 use App\Models\Film;
 use App\Models\Genre;
 use Illuminate\Http\Request;
@@ -15,6 +17,21 @@ class FilmController extends Controller
     {
         $films = Film::all();
         return view('films.index', compact('films'));
+    }
+
+    public function home()
+    {
+        $films = Film::orderBy('updated_at', 'desc')->get();
+        $genres = Genre::all();
+        $filmsPopuler = Film::withCount('reviews')
+            ->withAvg('reviews', 'rating')
+            ->orderBy('reviews_count', 'desc')
+            ->orderBy('reviews_avg_rating', 'desc')
+            ->take(5)
+            ->get();
+        $casts = Cast::simplePaginate(6)->appends(['actors_page' => request('actors_page')]);
+        $actors = Actor::simplePaginate(6, ['*'], 'actors_page')->appends(['casts_page' => request('casts_page')]);
+        return view('index', compact('films', 'genres', 'filmsPopuler', 'actors', 'casts'));
     }
 
     /**
@@ -60,6 +77,7 @@ class FilmController extends Controller
     public function show($id)
     {
         $film = Film::find($id);
+
 
         if (!$film) {
             return redirect()->route('films.index')
