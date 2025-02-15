@@ -29,9 +29,7 @@ class FilmController extends Controller
             ->orderBy('reviews_avg_rating', 'desc')
             ->take(5)
             ->get();
-        $casts = Cast::simplePaginate(6)->appends(['actors_page' => request('actors_page')]);
-        $actors = Actor::simplePaginate(6, ['*'], 'actors_page')->appends(['casts_page' => request('casts_page')]);
-        return view('index', compact('films', 'genres', 'filmsPopuler', 'actors', 'casts'));
+        return view('index', compact('films', 'genres', 'filmsPopuler'));
     }
 
     /**
