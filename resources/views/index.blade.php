@@ -50,80 +50,15 @@
 
         <div>
             <div class="bg-[#22252F] p-2 rounded-lg h-fit">
-                <form action="#" method="GET">
-                    <select name="genre" id="genre" class="text-white text-base font-semibold bg-[#161A20] cursor-pointer border-none outline-none w-full rounded-lg" onchange="this.form.submit()">
-                        <option class="text-sm" value="" disabled selected>Select Genre</option>
-                        @forelse ($genres as $genre)
-                            <option value="{{ $genre->id }}">{{ $genre->name }}</option>
-                        @empty
-                            <option value="" disabled>No Genre</option>
-                        @endforelse
-                    </select>
-
-                    <button class="bg-gradient-to-r mt-4 from-[#FC882F] to-[#2EBCF9] w-full py-2 rounded-lg text-white font-semibold">Search</button>
-                </form>
-            </div>
-            <div class="bg-[#22252F] p-4 rounded-lg mt-4 h-fit">
-                <h2 class="text-lg text-white font-semibold">List Cast</h2>
-                <div class="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-3 gap-4 mt-4">
-                    @forelse ($casts as $cast)
-                        <a href="">
-                            <img src="{{asset('storage/'.$cast->photo)}}" alt="" class="w-full h-[100px] lg:h-[110px] object-cover rounded-lg">
-                            <h3 class="text-sm text-white mt-2">{{ $cast->name }}</h3>
+                <h3 class="text-white text-2xl mb-4 font-semibold">List Genre</h3>
+                <div class="grid grid-cols-3 lg:grid-cols-3 gap-2">
+                    @forelse ($genres as $genre)
+                        <a href="#" class="rounded-lg bg-[#161A20] text-center cursor-pointer px-4 py-2 hover:bg-gradient-to-t hover:duration-150 hover:from-[#FC882F] to-[#2EBCF9]">
+                            <h3 class="text-white font-semibold text-sm">{{ $genre->name }}</h3>
                         </a>
                     @empty
-                        <p class="text-white">No Cast</p>
+                        <p class="text-white">No Genre</p>
                     @endforelse
-                </div>
-                <div class="w-full flex justify-center mt-4">
-                    @if ($casts->hasPages())
-                        <div class="flex space-x-2">
-                            @if ($casts->previousPageUrl())
-                                <a href="{{ $casts->previousPageUrl() }}&casts_page={{ request('casts_page', 1) }}" 
-                                    class="bg-gradient-to-r mt-4 mb-4 from-[#FC882F] to-[#2EBCF9] px-8 py-2 rounded-lg text-white font-semibold">
-                                    Previous
-                                </a>
-                            @endif
-                            @if ($casts->nextPageUrl())
-                                <a href="{{ $casts->nextPageUrl() }}&casts_page={{ request('casts_page', 1) }}" 
-                                    class="bg-gradient-to-r mt-4 mb-4 from-[#FC882F] to-[#2EBCF9] px-8 py-2 rounded-lg text-white font-semibold">
-                                    Next
-                                </a>
-                            @endif
-                        </div>
-                    @endif
-                </div>
-            </div>
-            <div class="bg-[#22252F] p-4 rounded-lg mt-4 h-fit">
-                <h2 class="text-lg text-white font-semibold">List Actor</h2>
-                <div class="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-3 gap-4 mt-4">
-                    @forelse ($actors as $actor)
-                        <a href="">
-                            <img src="{{ asset('storage/'.$actor->photo) }}" alt="" class="w-full h-[100px] lg:h-[110px] object-cover rounded-lg">
-                            <h3 class="text-sm text-white mt-2">{{ $actor->name }}</h3>
-                        </a>
-                    @empty
-                        <p class="text-white">No Actor</p>
-                    @endforelse
-                </div>
-                
-                <div class="w-full flex justify-center mt-4">
-                    @if ($actors->hasPages())
-                        <div class="flex space-x-2">
-                            @if ($actors->previousPageUrl())
-                                <a href="{{ $actors->previousPageUrl() }}&actors_page={{ request('actors_page', 1) }}" 
-                                    class="bg-gradient-to-r mt-4 mb-4 from-[#FC882F] to-[#2EBCF9] px-8 py-2 rounded-lg text-white font-semibold">
-                                    Previous
-                                </a>
-                            @endif
-                            @if ($actors->nextPageUrl())
-                                <a href="{{ $actors->nextPageUrl() }}&actors_page={{ request('actors_page', 1) }}" 
-                                    class="bg-gradient-to-r mt-4 mb-4 from-[#FC882F] to-[#2EBCF9] px-8 py-2 rounded-lg text-white font-semibold">
-                                    Next
-                                </a>
-                            @endif
-                        </div>
-                    @endif
                 </div>
             </div>
         </div>
