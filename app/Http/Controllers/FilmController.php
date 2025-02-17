@@ -76,12 +76,10 @@ class FilmController extends Controller
     {
         $film = Film::find($id);
 
-
         if (!$film) {
             return redirect()->route('films.index')
                 ->with('error', 'Film not found.');
         }
-
         return view('films.show', compact('film'));
     }
 
