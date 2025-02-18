@@ -19,7 +19,7 @@
                 <h2 class="text-white font-bold text-2xl">Populer</h2>
                 <div class="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-x-4 mt-4">
                     @forelse ($filmsPopuler as $film)
-                        <a href="#" class="rounded-lg cursor-pointer transform transition-transform duration-300 hover:scale-105">
+                        <a href="{{route('film.show', $film)}}" class="rounded-lg cursor-pointer transform transition-transform duration-300 hover:scale-105">
                             <img src="{{asset('storage/'.$film->photo)}}" alt="" class="w-full h-[150px] md:h-[200px] lg:h-[250px] object-cover rounded-lg">
                             <h3 class="text-white font-semibold text-base mt-2">{{ Str::limit($film->title, 10) }}</h3>
                             <p class="text-[#5C636F] text-sm font-semibold">{{ $film->genre->name }}</p>
@@ -33,7 +33,8 @@
                 <h2 class="text-white font-bold text-2xl">Latest Release</h2>
                 <div class="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-x-4 mt-4">
                     @forelse ($films as $film)
-                        <a href="#" class="rounded-lg cursor-pointer transform transition-transform duration-300 hover:scale-105">
+                        {{-- <h2 class="text-white">{{$film->id}}</h2> --}}
+                        <a href="{{route('film.show', $film)}}" class="rounded-lg cursor-pointer transform transition-transform duration-300 hover:scale-105">
                             <img src="{{asset('storage/'.$film->photo)}}" alt="" class="w-full h-[150px] md:h-[200px] lg:h-[250px] object-cover rounded-lg">
                             <h3 class="text-white font-semibold text-base mt-2">{{ Str::limit($film->title, 10) }}</h3>
                             <p class="text-[#5C636F] text-sm font-semibold">{{ $film->genre->name }}</p>
