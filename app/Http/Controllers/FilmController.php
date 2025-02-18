@@ -72,15 +72,9 @@ class FilmController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show($id)
+    public function show(Film $film)
     {
-        $film = Film::find($id);
-
-        if (!$film) {
-            return redirect()->route('films.index')
-                ->with('error', 'Film not found.');
-        }
-        return view('films.show', compact('film'));
+        return view('film', compact('film'));
     }
 
     /**
