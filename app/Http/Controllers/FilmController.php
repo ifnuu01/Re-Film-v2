@@ -74,7 +74,20 @@ class FilmController extends Controller
      */
     public function show(Film $film)
     {
+        if (!$film) {
+            return redirect()->route('films.index')
+                ->with('error', 'Film not found.');
+        }
+
         return view('film', compact('film'));
+    }
+
+    public function searchFilm(Request $request)
+    {
+        $genres = Genre::all();
+        $search = $request->input('search');
+        $films = Film::where('title', 'like', '%' . $search . '%')->simplePaginate(1);
+        return view('search', compact('films', 'search', 'genres'));
     }
 
     /**
