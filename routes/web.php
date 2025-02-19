@@ -11,6 +11,9 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [FilmController::class, 'home'])->name('home');
 Route::get('/film/{film}', [FilmController::class, 'show'])->name('film.show');
+Route::get('/genre/{genre}', [GenreController::class, 'show'])->name('genre.show');
+// Route::get('/film/search', [FilmController::class, 'searchFilm'])->name('film.search');
+Route::get('/search/film', [FilmController::class, 'searchFilm'])->name('film.search');
 
 // Route::get('dashboard', function () {
 //     return view('dashboard');
@@ -19,7 +22,7 @@ Route::prefix('admin')->middleware(['auth', 'verified', RoleMiddleware::class . 
     Route::get('/', function () {
         return view('dashboard');
     })->name('dashboard');
-    Route::resource('genres', GenreController::class);
+    Route::resource('genres', GenreController::class)->except('show');
     Route::resource('films', FilmController::class)->except('show');
     Route::resource('casts', CastController::class);
     Route::resource('actors', ActorController::class);
