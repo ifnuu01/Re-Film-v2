@@ -8,8 +8,8 @@
               <stop offset="100%" style="stop-color:#2EBCF9;stop-opacity:1" />
             </linearGradient>
           </defs></svg>
-        <form action="" id="search" class="absolute hidden flex mx-auto right-0 left-0 items-center justify-center top-28 w-80 lg:w-1/2">
-            <input type="text" class="bg-[#22252F] text-white px-4 py-2 rounded-l w-full border-none outline-none" placeholder="Search">
+        <form action="{{route('film.search')}}" method="GET" id="search" class="absolute hidden flex mx-auto right-0 left-0 items-center justify-center top-28 w-80 lg:w-1/2">
+            <input type="text" name="search" class="bg-[#22252F] text-white px-4 py-2 rounded-l w-full border-none outline-none" placeholder="Search">
             <button type="submit" class="bg-gradient-to-r from-[#FC882F] to-[#2EBCF9] px-4 py-2 rounded-r text-white font-semibold">Search</button>
         </form>
         <div class="lg:hidden" id="logo">
@@ -21,7 +21,7 @@
               </defs>
             </svg>
         </div>
-        <div id="menu-auth" class="absolute right-4 rounded top-28 flex-col lg:flex-row gap-y-8 bg-[#22252F] lg:bg-transparent lg:relative lg:top-0 lg:right-0 lg:px-0 lg:py-0 px-4 py-4 flex items-center justify-center gap-x-4 hidden lg:flex" id="menuAuth">
+        <div id="menu-auth" class="absolute right-4 rounded top-28 flex-col lg:flex-row gap-y-8 bg-[#22252F] lg:bg-transparent lg:relative lg:top-0 lg:right-0 lg:px-0 lg:py-0 px-4 py-4 flex lg:items-center justify-center gap-x-4 hidden lg:flex" id="menuAuth">
             @auth
             @if(auth()->user()->isAdmin())
                 <li>
