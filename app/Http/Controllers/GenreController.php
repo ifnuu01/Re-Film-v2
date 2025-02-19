@@ -42,16 +42,16 @@ class GenreController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show($id)
+    public function show(Genre $genre)
     {
-        $genre = Genre::find($id);
-
         if (!$genre) {
             return redirect()->route('genres.index')
                 ->with('error', 'Genre not found.');
         }
 
-        return view('genres.show', compact('genre'));
+        $genres = Genre::all();
+
+        return view('genre', compact('genre', 'genres'));
     }
 
     /**
