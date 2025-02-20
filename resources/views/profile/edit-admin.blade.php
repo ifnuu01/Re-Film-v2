@@ -24,8 +24,8 @@
                 @csrf
                 @method('PATCH')
                 <input type="file" name="photo" id="photo" class="hidden">
-                <label for="photo" class="bg-[#2EBCF9] text-white px-4 py-2 rounded-lg cursor-pointer text-center">Upload Picture</label>
-                <button type="submit" class="bg-[#2EBCF9] text-white px-4 py-2 rounded-lg cursor-pointer">Save</button>
+                <label for="photo" class="bg-gradient-to-r from-[#FC882F] to-[#2EBCF9] text-white px-4 py-2 rounded-lg cursor-pointer text-center">Upload Picture</label>
+                <button type="submit" class="bg-gradient-to-r from-[#FC882F] to-[#2EBCF9] text-white px-4 py-2 rounded-lg cursor-pointer">Save</button>
                 @error('photo')
                     <p class="text-red-500 text-sm">{{ $message }}</p>
                 @enderror
@@ -47,7 +47,7 @@
                         <label for="email" class="text-white">Email</label>
                         <input type="email" name="email" id="email" value="{{auth()->user()->email}}" class="px-3 py-2 bg-[#22252F] text-white rounded-lg focus:outline-none focus:ring focus:border-blue-300 @error('title') border-red-500 @enderror" value="{{ old('email') }}">
                     </div>
-                    <button type="submit" class="bg-[#2EBCF9] text-white px-4 mt-4 py-2 rounded-lg">Save Profile</button>
+                    <button type="submit" class="bg-gradient-to-r from-[#FC882F] to-[#2EBCF9] text-white px-4 mt-4 py-2 rounded-lg">Save Profile</button>
                 </div>
             </form>
         </div>
@@ -75,7 +75,7 @@
                         <input type="password" name="password_confirmation" id="password_confirmation" class="px-3 py-2 bg-[#22252F] text-white rounded-lg focus:outline-none focus:ring focus:border-blue-300 @error('password_confirmation') border-red-500 @enderror" value="{{ old('password_confirmation') }}">
                         <x-input-error :messages="$errors->updatePassword->get('password_confirmation')" class="mt-2" />
                     </div>
-                    <button type="submit" class="bg-[#2EBCF9] text-white px-4 mt-4 py-2 rounded-lg">Update Password</button>
+                    <button type="submit" class="bg-gradient-to-r from-[#FC882F] to-[#2EBCF9] text-white px-4 mt-4 py-2 rounded-lg">Update Password</button>
                 </div>
             </form>
         </div>
