@@ -21,7 +21,7 @@
               </defs>
             </svg>
         </div>
-        <div id="menu-auth" class="absolute right-4 rounded top-28 flex-col lg:flex-row gap-y-8 bg-[#22252F] lg:bg-transparent lg:relative lg:top-0 lg:right-0 lg:px-0 lg:py-0 px-4 py-4 flex lg:items-center justify-center gap-x-4 hidden lg:flex" id="menuAuth">
+        <div id="menu-auth" class="absolute right-4 rounded top-28 flex-col lg:flex-row gap-y-8 bg-[#161A20] lg:bg-transparent lg:relative lg:top-0 lg:right-0 lg:px-0 lg:py-0 px-4 py-4 flex lg:items-center justify-center gap-x-4 hidden lg:flex" id="menuAuth">
             @auth
             @if(auth()->user()->isAdmin())
                 <li>
@@ -40,7 +40,7 @@
                     <a href="{{ route('register') }}" class="bg-gradient-to-r from-[#FC882F] to-[#2EBCF9] px-4 py-2 text-white font-semibold rounded">Register</a>
                 </li>
                 <li>
-                    <a href="{{ route('login') }}" class="bg-gradient-to-r from-[#FC882F] to-[#2EBCF9] px-4 py-2 text-white font-semibold rounded">Login</a>
+                    <a href="{{ route('login') }}" class="bored-solid border-2 border-[#22252F] px-4 py-2 text-transparent bg-clip-text bg-gradient-to-r from-[#FC882F] to-[#2EBCF9] font-semibold rounded">Login</a>
                 </li>
             @endauth
         </div>
