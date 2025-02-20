@@ -7,6 +7,7 @@
     <title>@yield('title')</title>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    @stack('style')
 </head>
 <body class="bg-[#161A20]">
     {{-- Navbar --}}
@@ -21,7 +22,7 @@
             </svg>
         </div>
         <div class="relative" x-data="{ open: false }">
-            <button @click="open = !open" class="px-4 py-2 bg-[#2EBCF9] text-white font-bold rounded-lg">
+            <button @click="open = !open" class="px-4 py-2 bg-gradient-to-r from-[#FC882F] to-[#2EBCF9] text-white font-bold rounded-lg">
                 Menu ▼
             </button>
 
@@ -33,11 +34,11 @@
                 x-transition:leave="transition ease-in duration-150"
                 x-transition:leave-start="opacity-100 scale-100"
                 x-transition:leave-end="opacity-0 scale-90"
-                class="absolute right-0 mt-2 w-48 bg-[#2EBCF9] text-black shadow-lg rounded-lg py-2 text-white">
+                class="absolute right-0 mt-2 w-48 bg-[#22252F] text-black shadow-lg rounded-lg py-2 text-white">
                 <form action="{{route('logout')}}" method="post">
                     @csrf
-                    <a href="{{route('profile.edit')}}" class="block px-4 py-2 hover:bg-white hover:text-[#2EBCF9]">Settings</a>
-                    <button type="submit" class="w-full text-left px-4 py-2 hover:bg-white hover:text-[#2EBCF9]">Logout</button>
+                    <a href="{{route('profile.edit')}}" class="block px-4 py-2 hover:text-[#161A20]">Settings</a>
+                    <button type="submit" class="w-full text-left px-4 py-2 hover:text-[#161A20]">Logout</button>
                 </form>
             </div>
         </div>
@@ -82,5 +83,6 @@
             content.classList.toggle('lg:pl-64');
         });
     </script>
+    @stack('script')
 </body>
 </html>

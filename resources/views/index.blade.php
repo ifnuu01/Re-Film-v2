@@ -5,8 +5,26 @@
 @section('content')
 <main class="px-4 lg:px-10 grid grid-cols-1 lg:grid-cols-4 gap-4 mt-[150px]">
     <div class="lg:col-span-3 flex flex-col gap-4">
-        <div class="rounded-lg">
-            <img src="{{asset('assets/images/image-2.jpg')}}" alt="" class="w-full h-[200px] lg:h-[250px] lg:h-[380px] object-cover rounded-lg">
+        <div class="rounded-lg relative">
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper">
+                    {{-- @foreach ($sliderImages as $image)
+                    <div class="swiper-slide">
+                        <img src="{{ asset('storage/' . $image) }}" alt="" class="w-full h-[200px] lg:h-[250px] lg:h-[380px] object-cover rounded-lg">
+                    </div>
+                    @endforeach --}}
+                    <div class="swiper-slide">
+                        <img src="{{ asset('assets/images/image-1.jpg') }}" alt="Slide 1" class="w-full h-[200px] lg:h-[250px] lg:h-[380px] object-cover rounded-lg">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="{{ asset('assets/images/image-2.jpg') }}" alt="Slide 2" class="w-full h-[200px] lg:h-[250px] lg:h-[380px] object-cover rounded-lg">
+                    </div>
+                </div>
+                <!-- Pagination dan Navigation -->
+                <div class="swiper-pagination"></div>
+                <div class="swiper-button-next" style="color: #FC882F;"></div>
+                <div class="swiper-button-prev" style="color: #2EBCF9;"></div>
+            </div>
         </div>
         <div>
             <h2 class="text-white font-bold text-2xl">Populer</h2>
@@ -67,3 +85,36 @@
     </div>
 </main>
 @endsection
+
+@push('script-top')
+<!-- Swiper CSS -->
+<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+<!-- Swiper JS -->
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<!-- Initialize Swiper -->
+@endpush
+@push('scripts')
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        var swiper = new Swiper('.mySwiper', {
+            loop: true,
+            autoplay: {
+                delay: 3000,
+                disableOnInteraction: false,
+            },
+            effect: 'fade', // Efek smooth
+            fadeEffect: {
+                crossFade: true,
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+        });
+    });
+</script>
+@endpush

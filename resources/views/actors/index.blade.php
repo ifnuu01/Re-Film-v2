@@ -19,12 +19,11 @@
         <a href="{{route('actors.create')}}" class="flex items-center w-fit gap-x-2 bg-[#FC882F] px-4 py-2  rounded text-white hover:border-2 hover:border-solid hover:border-white"><svg class="w-[16px] inline fill-white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 144L48 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l144 0 0 144c0 17.7 14.3 32 32 32s32-14.3 32-32l0-144 144 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-144 0 0-144z"/></svg><span>Add actor</span></a>
     </div>
     <div class="mt-4">
-        <table class="w-full bg-[#22252F] text-white table-auto">
+        <table id="table" class="w-full bg-[#22252F] text-white table-auto">
             <thead class="">
                 <tr class="text-left bg-[#161A20] border-b-2 border-solid border-white">
                     <th class="py-2 px-2">No</th>
                     <th class="py-2 px-2">Actor Name</th>
-                    <th class="py-2 px-2">Photo</th>
                     <th class="py-2 px-2">Action</th>
                 </tr>
             </thead>
@@ -33,9 +32,6 @@
                 <tr class="hover:bg-[#161A20]">
                     <td class="py-2 px-2">{{ $key + 1 }}</td>
                     <td class="py-2 px-2">{{$actor->name}}</td>
-                    <td class="py-2 px-2">
-                        <img class="rounded w-20 h-20 object-cover" src="{{asset('storage/'.$actor->photo)}}" alt="{{$actor->name}}">
-                    </td>
                     <td class="py-2 px-2">
                         <form action="{{route('actors.destroy', $actor->id)}}" method="POST" class="flex gap-x-2">
                             @method('DELETE')
@@ -56,3 +52,51 @@
     </div>
 </div>
 @endsection
+
+@push('style')
+<link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/dataTables.tailwindcss.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tailwindcss/forms@0.5.2/dist/forms.min.css">
+@endpush
+
+@push('script')
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+
+<script>
+    $(document).ready(function () {
+    $('#table').DataTable({
+        "pagingType": "simple_numbers", // Pagination lebih kecil
+        "language": {
+            "search": "Search:",
+            "lengthMenu": "Show _MENU_ entries",
+        }
+    });
+
+    setTimeout(() => {
+        // Atur "Show entries" dan "Search" agar sejajar
+        $('.dataTables_length').addClass('flex items-center space-x-2');
+        $('.dataTables_filter').addClass('flex items-center space-x-2');
+        $('.dataTables_wrapper .dataTables_length, .dataTables_wrapper .dataTables_filter')
+            .wrapAll('<div class="flex justify-between items-center mb-4"></div>');
+    
+        // Styling untuk input pencarian dan dropdown
+        $('input[type="search"]').addClass('px-2 py-1 border border-gray-500 rounded bg-[#161A20] text-white ml-2 lg:px-5');
+        $('select').addClass('px-2 py-1 border border-gray-500 rounded bg-[#161A20] text-white px-5');
+    
+        // Styling untuk label
+        $('.dataTables_length label, .dataTables_filter label').addClass('text-white');
+    
+        // Atur "Showing entries" dan pagination agar sejajar
+        $('.dataTables_info').addClass('text-white');
+        $('.dataTables_paginate').addClass('flex space-x-2 items-center');
+    
+        $('.dataTables_wrapper .dataTables_info, .dataTables_wrapper .dataTables_paginate')
+            .wrapAll('<div class="flex justify-between items-center mt-4"></div>');
+    
+        // Styling pagination
+        $('.dataTables_wrapper .dataTables_paginate .paginate_button')
+            .addClass('px-3 py-1 mx-1 rounded bg-gray-700 text-white hover:bg-gray-500');
+    }, 50);
+});
+</script>
+@endpush
