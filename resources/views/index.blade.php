@@ -14,10 +14,13 @@
                     </div>
                     @endforeach --}}
                     <div class="swiper-slide">
-                        <img src="{{ asset('assets/images/image-1.jpg') }}" alt="Slide 1" class="w-full h-[200px] lg:h-[250px] lg:h-[380px] object-cover rounded-lg">
+                        <img src="{{ asset('assets/images/image-1.jpeg') }}" alt="Slide 1" class="w-full h-[200px] lg:h-[250px] lg:h-[380px] object-cover rounded-lg">
                     </div>
                     <div class="swiper-slide">
-                        <img src="{{ asset('assets/images/image-2.jpg') }}" alt="Slide 2" class="w-full h-[200px] lg:h-[250px] lg:h-[380px] object-cover rounded-lg">
+                        <img src="{{ asset('assets/images/image-2.jpeg') }}" alt="Slide 2" class="w-full h-[200px] lg:h-[250px] lg:h-[380px] object-cover rounded-lg">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="{{ asset('assets/images/image-3.jpeg') }}" alt="Slide 2" class="w-full h-[200px] lg:h-[250px] lg:h-[380px] object-cover rounded-lg">
                     </div>
                 </div>
                 <!-- Pagination dan Navigation -->

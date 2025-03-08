@@ -21,7 +21,7 @@ class FilmController extends Controller
 
     public function home()
     {
-        $films = Film::orderBy('updated_at', 'desc')->simplePaginate(2);
+        $films = Film::orderBy('updated_at', 'desc')->simplePaginate(10);
         $genres = Genre::all();
         $filmsPopuler = Film::withCount('reviews')
             ->withAvg('reviews', 'rating')

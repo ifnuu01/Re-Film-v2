@@ -29,6 +29,9 @@
                 </li>
             @endif
                 <li>
+                    <a href="{{ route('profile.edit') }}" class="bored-solid border-2 border-[#22252F] px-4 py-2 text-transparent bg-clip-text bg-gradient-to-r from-[#FC882F] to-[#2EBCF9] font-semibold rounded">Settings</a>
+                </li>
+                <li>
                     <a href="{{ route('logout') }}" class="bg-gradient-to-r from-[#FC882F] to-[#2EBCF9] px-4 py-2 text-white font-semibold rounded"
                        onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="hidden">
